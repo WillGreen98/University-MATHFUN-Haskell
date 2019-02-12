@@ -4,7 +4,6 @@ timesTen x = x * 10
 sumThree :: Int -> Int -> Int -> Int
 sumThree x y z = x + y + z
 
-
 areaOfCircle :: Float -> Float
 areaOfCircle radius = radius * pi^2
 
@@ -27,4 +26,4 @@ averageThree :: Int -> Int -> Int -> Float
 averageThree a b c = fromIntegral (a + b + c) / 3
 
 absolute :: Int -> Int
-absolute =
+absolute n = if n >= 0 then n else -n
