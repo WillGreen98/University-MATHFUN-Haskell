@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: c6d289c52a2008ea03c629258abcb77d381ac84502818b95ba8ff55c3d6f59a4
+-- hash: 6f0798b95cba6527be28a981deb0a6f6e55bb7a5c43fe4d3c4bf27a46a1ec078
 
 name:           University-MATHFUN-Haskell
 version:        0.1.0.0
@@ -15,7 +15,6 @@ author:         Author name here
 maintainer:     example@example.com
 copyright:      2019 Author name here
 license:        BSD3
-license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
