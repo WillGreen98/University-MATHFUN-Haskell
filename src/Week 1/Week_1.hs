@@ -23,7 +23,7 @@ isEven :: Int -> Bool
 isEven x = x `mod` 2 == 0
 
 averageThree :: Int -> Int -> Int -> Float
-averageThree a b c = fromIntegral (a + b + c) / 3
+averageThree a b c = fromIntegral(a + b + c) / 3
 
 absolute :: Int -> Int
 absolute n = if n >= 0 then n else -n

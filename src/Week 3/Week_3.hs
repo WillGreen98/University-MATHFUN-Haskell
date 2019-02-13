@@ -33,3 +33,22 @@ divide :: Int -> Int -> Int
 divide n m
     | n < m = 0
     | otherwise = 1 + divide(n - m) m
+
+exOr :: Bool -> Bool -> Bool
+
+ifThenElse :: Bool -> Int -> Int -> Int
+
+daysInMonth :: Int -> Int
+
+--  Using Recursion
+sumNumbers :: Int -> Int
+
+sumSquares :: Int -> Int
+
+power :: Int -> Int -> Int
+
+sumFromTo :: Int -> Int -> Int
+
+gcd :: Int -> Int -> Int
+
+intSquareRoot :: Int -> Int

@@ -20,4 +20,10 @@ There may be duplicate files of some classes, this is due to the topics being ta
 * Guards
 
 ## Week 3
-* Pattern Matching and Recursion
+* Pattern Matching
+* Recursion
+
+## Week 4
+* Tuples
+* Strings
+* Lists
