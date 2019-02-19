@@ -23,6 +23,10 @@ sumDiagonalLengths x y z = dx + dy + dz
         dz = sqrt(z^2 + z^2)
 
 taxiFare :: Int -> Float
+taxiFare k
+        where fare = 2.20
+        | if k >= 10 then fare + 50 else fare + 30
+
 
 howManyAboveAverage :: Int -> Int -> Int -> Int
 

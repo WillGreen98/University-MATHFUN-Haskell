@@ -17,7 +17,6 @@ infixr 2  ||
 (||) :: Bool -> Bool -> Bool
 True || _ =  True
 False || a = a
-
 fact :: Int -> Int
 fact n
     | n == 0 = 1

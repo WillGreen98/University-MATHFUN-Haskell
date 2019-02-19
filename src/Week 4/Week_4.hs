@@ -8,7 +8,7 @@ betterStudent (s1,m1) (s2,m2)
     | otherwise         = s2
 
 marks:: [StudentMark] -> [Int]
-marks stMarks = [ mk | (st,mk) <- stMarks ]
+marks stMarks = [ mk | (st,mk) <- stMarks]
 
 pass :: [StudentMark] -> [String]
 pass stMarks = [ st | (st,mk) <- stMarks, mk >= 40 ]
