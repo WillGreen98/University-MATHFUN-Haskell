@@ -3,16 +3,16 @@
 import Prelude hiding (fst, snd, head, tail, sum, concat, reverse, zip)
 
 -- Definitions of the prelude functions fst and snd
-fst (x,_)       = x
-snd (_,y)       = y
+fst(x,_) = x
+snd(_,y) = y
 
 -- Definitions of the prelude functions head and tail
-head (x:_)      = x
-tail (_:xs)     = xs
+head (x:_) = x
+tail (_:xs) = xs
 
 absFirst :: [Int] -> Int
-absFirst []     = -1
-absFirst (x:xs) = abs x
+absFirst [] = -1
+absFirst(x:xs) = abs x
 
 sum :: [Int] -> Int
 sum []     = 0
