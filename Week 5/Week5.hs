@@ -1,18 +1,22 @@
--- Week5.hs This file illustrates list patterns and recursion over lists.
+{- Week5.hs
+ This file illustrates list patterns and recursion over lists.
+-}
 
 import Prelude hiding (fst, snd, head, tail, sum, concat, reverse, zip)
 
 -- Definitions of the prelude functions fst and snd
-fst(x,_) = x
-snd(_,y) = y
+
+fst (x,_)       = x
+snd (_,y)       = y
 
 -- Definitions of the prelude functions head and tail
-head (x:_) = x
-tail (_:xs) = xs
+
+head (x:_)      = x
+tail (_:xs)     = xs
 
 absFirst :: [Int] -> Int
-absFirst [] = -1
-absFirst(x:xs) = abs x
+absFirst []     = -1
+absFirst (x:xs) = abs x
 
 sum :: [Int] -> Int
 sum []     = 0
@@ -34,35 +38,58 @@ zip :: [a] -> [b] -> [(a,b)]
 zip (x:xs) (y:ys)  = (x,y) : zip xs ys
 zip _ _            = []
 
---  List Patterns
+type StudentMark = (String, Int)
+
+-- worksheet
+
+-- list patterns
 headPlusOne :: [Int] -> Int
-headPlusOne [5,7,2,4] = 6
+headPlusOne [] = 0
+headPlusOne (x:xs) = head (x:xs) + 1
 
 duplicateHead :: [a] -> [a]
-duplicateHead [5,7] = [5,5,7]
+duplicateHead []  = []
+duplicateHead (x:xs) = head (x:xs) : (x:xs)
 
 rotate :: [a] -> [a]
-rotate [5,7,2,4] = [7,5,2,4]
+rotate (x:xs) = if length (x:xs) < 2 then (x:xs) else head xs : x : tail xs ++ []
 
--- Recursion over Lists
+-- recursion over lists
 listLength :: [a] -> Int
+listLength [] = 0
+listLength (x:xs) = 1 + listLength xs
 
 multAll :: [Int] -> Int
-multAll [5,2,4] = 40
+multAll [] = 1
+multAll (x:xs) = x * multAll xs
 
 andAll :: [Bool] -> Bool
-andAll [True, True] = True
-andAll [True, False] = False
+andAll [] = True
+andAll (x:xs) = x && andAll xs
 
 countElems :: Int -> [Int] -> Int
-countElems 3 [5, 3, 8, 3, 9] = 2
+countElems _ [] = 0
+countElems i (x:xs)
+  | i == x = 1 + countElems i xs
+  | otherwise = countElems i xs
 
 removeAll :: Int -> [Int] -> [Int]
-removeAll 3 [5, !!3, 8, 3, 9] = [5, 8, 9]
+removeAll _ [] = []
+removeAll i (x:xs)
+  | i == x = removeAll x xs
+  | otherwise = x : removeAll i xs
 
 listMarks :: String -> [StudentMark] -> [Int]
-listMarks "Joe" [("Joe", 45), ("Sam", 70), ("Joe", 52)] = [45,52]
+listMarks _ [] = []
+listMarks std (x:xs)
+  | std == fst x = snd x : listMarks std xs
+  | otherwise = listMarks std xs
 
 prefix :: [Int] -> [Int] -> Bool
+prefix [] _ = True
+prefix (x:xs) (y:ys)
+  | x /= y = False
+  | otherwise = prefix xs ys
 
 subSequence :: [Int] -> [Int] -> Bool
+subSequence xs (y:ys) = prefix xs (y:ys) || subSequence xs ys

@@ -5,7 +5,7 @@ sumThree :: Int -> Int -> Int -> Int
 sumThree x y z = x + y + z
 
 areaOfCircle :: Float -> Float
-areaOfCircle radius = radius * pi^2
+areaOfCircle radius = pi * (radius^2)
 
 volumeOfCylinter :: Float -> Float -> Float
 volumeOfCylinter radius height = areaOfCircle radius * height
