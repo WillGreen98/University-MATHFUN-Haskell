@@ -96,6 +96,14 @@ totalSalesU artistu albums = [ts | (Album _ a _ ts) <- albums, artistu == a]
 displayArtist :: Char -> [Album] -> [Album]
 displayArtist artistd = L.filter (\(Album _ a _ _) -> elem artistd a)
 
+-- artistPairs :: [Album] -> [(String,Int)]
+-- artistPairs albumsList = pairsList albumsList []
+--     where pairsList [] _ = []
+--           pairsList (Album _ artist _ _ : albumsList) done
+--               | artist `elem` done = pairsList albumsList done
+--               | otherwise = (artist , count artist ) : pairsList albumsList (artist:done)
+--           count givenArtist = sum [1 | a <- L.map (\album@(Album _ artist _ _) -> artist) albumsList, a == givenArtist]
+
 occurrences :: (Ord k, Num a) => [k] -> [(k, a)]
 occurrences albums = M.toList (M.fromListWith (+) [(o, 1) | o <- albums])
 
