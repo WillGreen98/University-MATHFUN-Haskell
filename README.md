@@ -16,7 +16,7 @@ There may be duplicate files of some classes, this is due to the topics being ta
 
 ## Week 1
 
-* Introduction to Functional Programming
+* Introduction to Functional Programming 1 & 2
 
 ## Week 2
 

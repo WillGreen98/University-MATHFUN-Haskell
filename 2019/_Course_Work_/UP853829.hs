@@ -168,7 +168,6 @@ main = do
         putStrLn "-------------------------------------------------------------------------------"
         putStrLn "                      MATHFUN Haskell Album Rating Data"
         putStrLn "                             Student: UP853829"
-        -- putStrLn ("        Successfully loaded " ++ show(length albumFormattedDB) ++ "albums!")
         putStrLn "-------------------------------------------------------------------------------\n"
 
 
